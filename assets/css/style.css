@@ -10,7 +10,7 @@
     width: 90%;
     margin: 0 auto;
     height: 90vh;
-    background-color: blue;
+    background-image: url(../img/mine.jpg);
     
 }
 #header-left{
@@ -21,10 +21,13 @@
     align-items: center;
 }
 #container-left{
-    width: 33.33%;
+    
     background-color: yellow;
     height: 90vh;
     overflow-y: visible;
+}
+#container-right{
+    width: 66.66%;
 }
 .desktop-notifies{
     background-color: aqua;
