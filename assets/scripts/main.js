@@ -167,8 +167,8 @@ var app = new Vue(
                 }
             ]
         },
-        methods : {
-            miaFunzione(item,index){
+        methods: {
+            function(item,index){
                 this.indiceDinamico = index;
             }
         }
