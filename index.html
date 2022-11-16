@@ -57,7 +57,7 @@
                         <div>
                             <ul>
                                 <!-- contacts -->
-                                <li v-for="(item, index) in contacts" @click="chatSelector" class="bg-primary px-4">
+                                <li v-for="(item, index) in contacts" @click="chatSelector(index)" class="bg-primary px-4">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <!-- section left friend -->
                                         <div class="d-flex py-3">
@@ -89,7 +89,7 @@
                                 <img class="roundedImg" :src="contacts[indiceDinamico].avatar" alt="">
                                 <div>
                                     <div>
-                                        Michele
+                                        {{contacts[indiceDinamico].name}}
                                     </div>
                                     <div>
                                         Ultimo accesso oggi alle 12:00
@@ -105,45 +105,16 @@
                         </div>
                     </header>
                     <!-- chat -->
-                    <div>
-                        <div class="d-flex justify-content-end">
-                            <!-- my text -->
-                            <div class="d-flex sent message my-3 mx-5 px-3 py-3">
+                    <div class="d-flex flex-column">
+                        <div v-for="(item, index) in contacts[indiceDinamico].messages" :class="(item.status == 'sent') ? 'sent' : 'received'" class="d-flex message my-3 mx-5 px-3 py-3">
                                 <!-- content text -->
-                                
+                                <p>{{item.message}}</p>
                                 <!-- time text -->
                                 <div><i class="fa-solid fa-chevron-down actions-message"></i></div>
                                 <div class="time-text mt-auto p-2">15:50</div>
                             </div>
-
-                        </div>
-                        <div>
-                            <!-- my text -->
-                            <div class="d-flex justify-content-end">
-
-                                <div class="d-flex sent message my-3 mx-5 px-3 py-3">
-                                    <!-- content text -->
-                                    <div>Hai cucinato il pollo?</div>
-                                    <!-- time text -->
-                                    <div><i class="fa-solid fa-chevron-down actions-message"></i></div>
-                                    <div class="time-text mt-auto p-2">15:50</div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- contact text -->
-                        <div class="d-flex justify-content-start">
-
-                            <div class="d-flex received message my-3 mx-5 px-3 py-3">
-                                <!-- content text -->
-                                <div>Hai cucinato il pollo?</div>
-                                <!-- time text -->
-                                <div><i class="fa-solid fa-chevron-down actions-message"></i></div>
-                                <div class="time-text mt-auto p-2">15:50</div>
-                            </div>
-
-                        </div>
-                    </div>
+                    </div>        
+                    
                 </div>
                 <!-- input area -->
                 <div id="input-area" class="d-flex bg-white w-100">

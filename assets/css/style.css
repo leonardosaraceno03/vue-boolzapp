@@ -79,9 +79,18 @@ ul{
     width: 300px;
     position: relative;
 }
-
+.start{
+    
+    justify-content: flex-start;
+}
+.end{
+    
+    justify-content: flex-end;
+}
 .sent{
+    
     background-color: green;
+    align-self: flex-end;
 }
 .received{
     background-color: grey;

@@ -168,7 +168,7 @@ var app = new Vue(
             ]
         },
         methods: {
-            chatSelector(item,index){
+            chatSelector(index){
                 this.indiceDinamico = index;
             }
         }
