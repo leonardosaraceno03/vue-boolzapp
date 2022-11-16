@@ -2,6 +2,7 @@ var app = new Vue(
     {
         el: '#app',
         data: {
+            indiceDinamico : 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -166,13 +167,10 @@ var app = new Vue(
                 }
             ]
         },
-        methods:{
-            chatSelector(){
-                
+        methods : {
+            miaFunzione(item,index){
+                this.indiceDinamico = index;
             }
         }
     }
 );
-
-
-

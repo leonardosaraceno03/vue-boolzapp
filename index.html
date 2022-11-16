@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -58,7 +57,7 @@
                         <div>
                             <ul>
                                 <!-- contacts -->
-                                <li v-for="(item, index) in contacts" @click="chatSelector" class="bg-primary px-4">
+                                <li v-for="(item, index) in contacts" @click="miaFunzione" class="bg-primary px-4">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <!-- section left friend -->
                                         <div class="d-flex py-3">
@@ -87,7 +86,7 @@
                         <div id="header-right"
                             class="d-flex align-items-center justify-content-between bg-white px-3 py-2">
                             <div class="d-flex">
-                                <img class="roundedImg" src="./assets/img/avatar_1.jpg" alt="">
+                                <img class="roundedImg" :src="contacts[indiceDinamico].avatar" alt="">
                                 <div>
                                     <div>
                                         Michele
@@ -111,7 +110,7 @@
                             <!-- my text -->
                             <div class="d-flex sent message my-3 mx-5 px-3 py-3">
                                 <!-- content text -->
-                                <div>Hai portato a spasso il cane?</div>
+                                
                                 <!-- time text -->
                                 <div><i class="fa-solid fa-chevron-down actions-message"></i></div>
                                 <div class="time-text mt-auto p-2">15:50</div>
@@ -174,4 +173,4 @@
     <script src="./assets/scripts/main.js"></script>
 </body>
 
-</html>
+</html>+
