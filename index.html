@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <!-- div vueJS -->
     <div id="app">
         <!-- div web app -->
         <div id="web-app">
@@ -64,7 +65,7 @@
                                             <img class="roundedImg" :src="contacts[index].avatar" alt="">
                                         <div class=" px-3">
                                             <div>{{contacts[index].name}}</div>
-                                            <div>Ultimo messaggio inviato</div>
+                                            <div>{{item.messages[item.messages.length-1].message}}</div>
                                         </div>
                                     </div>
                                     <div>
