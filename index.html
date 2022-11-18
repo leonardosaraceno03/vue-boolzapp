@@ -68,7 +68,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <span>12:00</span>
+                                        <span>{{getLastHourContacts(item)}}</span>
                                     </div>
                         </div>
                         </li>
@@ -111,16 +111,16 @@
                                 <p>{{item.message}}</p>
                                 <!-- time text -->
                                 <div><i class="fa-solid fa-chevron-down actions-message"></i></div>
-                                <div class="time-text mt-auto p-2">15:50</div>
+                                <div class="time-text mt-auto p-2">{{getLastHourMessages(item)}}</div>
                             </div>
                     </div>        
                     
                 </div>
                 <!-- input area -->
-                <div id="input-area" class="d-flex bg-white w-100">
-                    <div class="d-flex w-100">
+                <div id="input-area" class="d-flex bg-white align-items-center w-100">
+                    <div class="d-flex align-items-center w-100">
                         <div class="mx-3"><i class="fa-regular fa-face-smile"></i></div>
-                        <div class="w-100"><input class="w-100 input" type="text"></div>
+                        <div class="w-100"><input v-model="inputMessage" @keyup.enter="sentMessage" class="form-control" type="text" vuearia-label="default input example"></div>
                     </div>
 
                     <div class="mx-5"><i class="fa-solid fa-microphone"></i></div>
