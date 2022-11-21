@@ -3,9 +3,9 @@ var app = new Vue(
         el: '#app',
         data: {
             inputRicerca: "",
-            ricercaUtente : "",
-            inputMessage : "",
-            indiceDinamico : 0,
+            ricercaUtente: "",
+            inputMessage: "",
+            indiceDinamico: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -171,55 +171,57 @@ var app = new Vue(
             ]
         },
         methods: {
-            chatSelector(index){
+            chatSelector(index) {
                 this.indiceDinamico = index;
             },
-            getLastHourContacts(item){
-                let lastDate = item.messages[item.messages.length-1].date
+            getLastHourContacts(item) {
+                let lastDate = item.messages[item.messages.length - 1].date
                 lastDate = lastDate.split(' ')
-                console.log(lastDate[1])
+                //console.log(lastDate[1])
                 return lastDate[1]
             },
-            getLastHourMessages(item){
+            getLastHourMessages(item) {
                 let date = item.date;
                 date = date.split(' ')
                 return date[1];
             },
-            sentMessage(){
+            sentMessage() {
                 let getMessagesOfContact = this.contacts[this.indiceDinamico].messages
                 getMessagesOfContact.push(
                     {
-                        date : '28/03/2020 16:15:22',
+                        date: '28/03/2020 16:15:22',
                         message: this.inputMessage,
                         status: 'sent'
                     }
                 )
-                setTimeout(this.replyFunction, 1000)   
+                setTimeout(this.replyFunction, 1000)
             },
-            replyFunction(){
+            replyFunction() {
                 this.contacts[this.indiceDinamico].messages.push({
-                    
-                        date : '28/03/2020 16:15:22',
-                        message: 'si',
-                        status: 'received'
-                    
+
+                    date: '28/03/2020 16:15:22',
+                    message: 'si',
+                    status: 'received'
+
                 })
+
+
+            },
+            ricercaUtenteFn() {
                 
-               
-              },
-              ricercaUtente(){
-                this.contacts.forEach((item)=>{
+                this.contacts.forEach((item) => {
                     let nameLower = item.name.toLowerCase();
-                    if(nameLower.includes(this.inputRicerca.toLowerCase())){
+                    
+                    if (nameLower.includes(this.inputRicerca.toLowerCase())) {
                         item.visible = true
-                    }else{
+                    } else {
                         item.visible = false
                     }
                 })
-              }
+            },
         },
-        
-        
+
+
 
     }
 );

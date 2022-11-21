@@ -51,7 +51,7 @@
                         <!-- search bar + users list -->
                         <div class="d-flex bg-danger px-3 py-1">
                             <div><i class="fa-solid fa-magnifying-glass px-3"></i></div>
-                            <div><input class="search-bar" type="text" v-model="inputRicerca" @keyup="ricercaUtente" placeholder="Cerca o inizia una nuova chat">
+                            <div><input class="search-bar" type="text" v-model="inputRicerca" @keyup="ricercaUtenteFn()" placeholder="Cerca o inizia una nuova chat">
                             </div>
                         </div>
                         <div>
