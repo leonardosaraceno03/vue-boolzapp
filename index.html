@@ -51,13 +51,13 @@
                         <!-- search bar + users list -->
                         <div class="d-flex bg-danger px-3 py-1">
                             <div><i class="fa-solid fa-magnifying-glass px-3"></i></div>
-                            <div><input class="search-bar" type="text" placeholder="Cerca o inizia una nuova chat">
+                            <div><input class="search-bar" type="text" v-model="inputRicerca" @keyup="ricercaUtente" placeholder="Cerca o inizia una nuova chat">
                             </div>
                         </div>
                         <div>
                             <ul>
                                 <!-- contacts -->
-                                <li v-for="(item, index) in contacts" @click="chatSelector(index)" class="bg-primary px-4">
+                                <li v-for="(item, index) in contacts" @click="chatSelector(index)" class="bg-primary px-4" v-if="item.visible">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <!-- section left friend -->
                                         <div class="d-flex py-3">

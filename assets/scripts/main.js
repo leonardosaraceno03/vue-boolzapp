@@ -2,6 +2,8 @@ var app = new Vue(
     {
         el: '#app',
         data: {
+            inputRicerca: "",
+            ricercaUtente : "",
             inputMessage : "",
             indiceDinamico : 0,
             contacts: [
@@ -205,6 +207,16 @@ var app = new Vue(
                 
                
               },
+              ricercaUtente(){
+                this.contacts.forEach((item)=>{
+                    let nameLower = item.name.toLowerCase();
+                    if(nameLower.includes(this.inputRicerca.toLowerCase())){
+                        item.visible = true
+                    }else{
+                        item.visible = false
+                    }
+                })
+              }
         },
         
         
